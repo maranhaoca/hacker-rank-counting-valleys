@@ -26,13 +26,10 @@ namespace Src
 
             for (int i = 0; i < path.Length; i++)
             {
-                altitude = path[i] == 'U' ? altitude += 1 : altitude -= 1;                
+                altitude = path[i] == 'U' ? altitude += 1 : altitude -= 1;
 
-                if (path[i] == 'D' && altitude == -1)
-                {
-                    entryVale = true;
-
-                }
+                entryVale = path[i] == 'D' && altitude == -1 ? true : entryVale;
+                
                 if (path[i] == 'U' && altitude == 0 && entryVale)
                 {
                     count++;
